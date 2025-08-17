@@ -10,5 +10,7 @@ langchain-huggingface
 langchain-google-genai
 google-api-core
 huggingface-hub
+langchain-community
+
 
 
