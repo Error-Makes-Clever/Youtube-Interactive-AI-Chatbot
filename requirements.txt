@@ -11,6 +11,8 @@ langchain-google-genai
 google-api-core
 huggingface-hub
 langchain-community
+pyttsx3
+
 
 
 
