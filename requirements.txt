@@ -1,0 +1,14 @@
+streamlit
+pyttsx3
+reportlab
+python-dotenv
+youtube-transcript-api
+langchain 
+faiss-cpu
+chromadb
+langchain-huggingface
+langchain-google-genai
+google-api-core
+huggingface-hub
+
+
