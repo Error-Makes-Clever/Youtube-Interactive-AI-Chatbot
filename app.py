@@ -23,6 +23,7 @@ st.sidebar.markdown(
     <div style="background-color:#d4edda; padding:8px; border-radius:6px; font-size:12px; color:#155724; margin-top:4px;">
         Press <b>Enter</b> after typing your API keys to confirm.
     </div>
+    <div style="height:10px;"></div>
     """,
     unsafe_allow_html=True
 )
@@ -266,3 +267,4 @@ if google_api_key and huggingface_api_token:
         else:
 
             st.info("Enter your Hugging Face token in the sidebar to enable General Chat.")
+
