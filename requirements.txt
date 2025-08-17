@@ -1,5 +1,5 @@
 streamlit
-pyttsx3
+gtts
 reportlab
 python-dotenv
 youtube-transcript-api
@@ -11,6 +11,7 @@ langchain-google-genai
 google-api-core
 huggingface-hub
 langchain-community
+
 
 
 
