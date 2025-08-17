@@ -15,7 +15,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-import pyttsx3
+from gtts import gTTS
 import tempfile
 
 # For PDF
@@ -49,15 +49,15 @@ def init_embeddings(hf_api_token: str):
 # =====================
 
 def text_to_audio(text):
-
+    # Remove markdown bold formatting
     text = re.sub(r"\*\*(.*?)\*\*", r"\1", text)
 
-    engine = pyttsx3.init()
-    engine.setProperty("rate", 150)
+    # Generate speech using gTTS
+    tts = gTTS(text=text, lang='en')
     with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as f:
         filename = f.name
-    engine.save_to_file(text, filename)
-    engine.runAndWait()
+        tts.save(filename)
+
     return filename
 
 # ============================
@@ -336,4 +336,5 @@ def general_chat_agent(google_api_key: str):
         input_messages_key="input",
         history_messages_key="general_history"
     )
+
     return conversation
