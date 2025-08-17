@@ -8,6 +8,11 @@ from google.api_core.exceptions import ResourceExhausted, GoogleAPICallError
 
 st.set_page_config(page_title="YouTube Chat + General Chat", layout="wide")
 
+st.markdown(
+        "<h1 style='text-align:center; color:#1e3a8a; font-size:48px; font-weight:bold;'>🎥 YouTube AI Chat & 💬 General AI Assistant</h1>",
+        unsafe_allow_html=True
+    )
+
 # ----------------- SIDEBAR: Keys -----------------
 st.sidebar.title("API Keys Setup")
 google_api_key = st.sidebar.text_input("Google Gemini API Key", type="password")
@@ -133,11 +138,7 @@ if st.session_state.summary:
     )
     # ----------------- PAGE RENDER -----------------
 if google_api_key and huggingface_api_token:
-    st.markdown(
-        "<h1 style='text-align:center; color:#1e3a8a; font-size:48px; font-weight:bold;'>🎥 YouTube AI Chat & 💬 General AI Assistant</h1>",
-        unsafe_allow_html=True
-    )
-
+    
     if page == "YouTube ChatBot":
         st.subheader("🎬 AI Video Summary & Contextual Q/A")
         if st.session_state.summary:
@@ -263,4 +264,5 @@ if google_api_key and huggingface_api_token:
                 })
                 st.rerun()
         else:
+
             st.info("Enter your Hugging Face token in the sidebar to enable General Chat.")
